@@ -270,7 +270,9 @@ body {
 
 .badge-royal {
   border-color: rgba(124,107,255,0.9);
-  color:
+  color: var(--royal);
+}
+
 
 /* LOGO HEADER REWORK – SVG DE Logo */
 .logo-box {
