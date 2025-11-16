@@ -443,7 +443,7 @@ body {
     filter: drop-shadow(0 0 4px rgba(212,175,55,0.4))
             drop-shadow(0 0 10px rgba(212,175,55,0.2));
   }
-
+}
 
 /* Extra intense flash on hover */
 @keyframes deGlowHover {
@@ -467,6 +467,7 @@ body {
     filter: drop-shadow(0 0 20px rgba(255, 240, 180, 0.8))
             drop-shadow(0 0 40px rgba(212,175,55,0.7));
   }
+}
 
 /* LUXURY GOLD SPARKLES – au-dessus de l'aura */
 .sparkle {
@@ -499,19 +500,22 @@ body {
   opacity: 1;
 }
 
-/* mouvement doux des étincelles */
+/* TRUE GOLD SPARKLE ANIMATION — FINAL FIX */
 @keyframes sparkleFloat {
   0% {
     transform: translateY(0) scale(0.6);
     opacity: 0.9;
   }
-  50% {
-    transform: translateY(-10px) scale(1);
+  30% {
+    transform: translateY(-6px) scale(1.0);
     opacity: 1;
   }
+  60% {
+    transform: translateY(-2px) scale(0.8);
+    opacity: 0.6;
+  }
   100% {
-    transform: translateY(0) scale(0.5);
+    transform: translateY(0) scale(0.4);
     opacity: 0.15;
   }
 }
-
