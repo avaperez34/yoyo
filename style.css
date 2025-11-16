@@ -387,14 +387,14 @@ body {
 @keyframes deGlow {
   0% {
     transform: scale(1);
-    filter: drop-shadow(0 0 6px rgba(212,175,55,0.35));
+    filter: drop-shadow(0 0 2px rgba(212,175,55,0.4));
   }
   50% {
-    transform: scale(1.02);
-    filter: drop-shadow(0 0 14px rgba(212,175,55,0.75));
+    transform: scale(1.07);
+    filter: drop-shadow(0 0 30px rgba(212,175,55,1));
   }
   100% {
     transform: scale(1);
-    filter: drop-shadow(0 0 6px rgba(212,175,55,0.35));
+    filter: drop-shadow(0 0 2px rgba(212,175,55,0.4));
   }
 }
