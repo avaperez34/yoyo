@@ -1,206 +1,270 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Domain Élysée – Royal Portfolio of Premium Domains</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Domain Élysée – a royal portfolio of premium digital estates: AI, casino, .ae, luxury and investment-grade domain names." />
+:root {
+  --bg: #050509;
+  --bg-alt: #0b0b12;
+  --card: #101019;
+  --border: #2b2738;
+  --gold: #d4af37;
+  --gold-soft: #b89633;
+  --silver: #c0c4d8;
+  --royal: #7c6bff;
+  --text-main: #f5f5fa;
+  --text-muted: #a1a3b8;
+  --accent: #f1e4c0;
+}
 
-  <link rel="stylesheet" href="style.css" />
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-</head>
-<body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <div class="crown">♛</div>
-        <div>
-          <div class="brand-name">Domain Élysée</div>
-          <div class="brand-tagline">Royal Portfolio of Premium Domains</div>
-        </div>
-      </div>
-      <nav class="nav">
-        <a href="#portfolio">Portfolio</a>
-        <a href="#about">About</a>
-        <a href="#contact" class="btn-nav">Contact</a>
-      </nav>
-    </div>
-  </header>
+html, body {
+  margin: 0;
+  padding: 0;
+}
 
-  <main>
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container hero-inner">
-        <div class="hero-text">
-          <h1>Premium Digital Estates for Visionary Brands.</h1>
-          <p>
-            Domain Élysée curates a selective collection of high-value,
-            investment-grade domain names across AI, luxury, gaming,
-            finance, and strategic .AE brands.
-          </p>
-          <a href="#portfolio" class="btn-primary">Explore the Portfolio</a>
-        </div>
-        <div class="hero-badge">
-          <div class="badge-title">Curated by</div>
-          <div class="badge-name">Domain Élysée</div>
-          <div class="badge-sub">Gold • Silver • Royalty • Monarchy</div>
-        </div>
-      </div>
-    </section>
+body {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #181628 0, #050509 55%);
+  color: var(--text-main);
+  line-height: 1.6;
+}
 
-    <!-- PORTFOLIO -->
-    <section id="portfolio" class="section">
-      <div class="container">
-        <div class="section-heading">
-          <h2>Featured Domains</h2>
-          <p>A selection of prime assets. Serious offers only.</p>
-        </div>
+/* Layout */
 
-        <div class="portfolio-grid">
-          <!-- EXAMPLE CARDS – DUPLICATE & EDIT AS NEEDED -->
-          <article class="domain-card">
-            <div class="domain-name">Diamante.casino</div>
-            <div class="domain-meta">
-              <span class="badge badge-gold">Casino</span>
-              <span class="badge badge-silver">Premium</span>
-            </div>
-            <p class="domain-desc">
-              Luxury, high-stakes casino brand with a diamond aura – perfect for
-              VIP gaming, live casino or high-roller club.
-            </p>
-            <a class="btn-ghost" href="mailto:contact@domainelysee.com?subject=Offer%20for%20Diamante.casino">
-              Make an offer
-            </a>
-          </article>
+.container {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
 
-          <article class="domain-card">
-            <div class="domain-name">Elysee.bet</div>
-            <div class="domain-meta">
-              <span class="badge badge-gold">Betting</span>
-              <span class="badge badge-royal">Royal</span>
-            </div>
-            <p class="domain-desc">
-              Short, memorable and aristocratic betting brand with a French
-              “palace” feeling for a premium sportsbook.
-            </p>
-            <a class="btn-ghost" href="mailto:contact@domainelysee.com?subject=Offer%20for%20Elysee.bet">
-              Make an offer
-            </a>
-          </article>
+/* Header */
 
-          <article class="domain-card">
-            <div class="domain-name">Elysee.casino</div>
-            <div class="domain-meta">
-              <span class="badge badge-gold">Casino</span>
-              <span class="badge badge-royal">Monarchy</span>
-            </div>
-            <p class="domain-desc">
-              Palace-grade brand for a flagship casino platform positioned at
-              the top of the market.
-            </p>
-            <a class="btn-ghost" href="mailto:contact@domainelysee.com?subject=Offer%20for%20Elysee.casino">
-              Make an offer
-            </a>
-          </article>
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(18px);
+  background: linear-gradient(to bottom, rgba(5,5,9,0.90), rgba(5,5,9,0.75));
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
 
-          <article class="domain-card">
-            <div class="domain-name">Diamanti.bet</div>
-            <div class="domain-meta">
-              <span class="badge badge-gold">Betting</span>
-              <span class="badge badge-silver">Italian</span>
-            </div>
-            <p class="domain-desc">
-              Elegant Italian-flavored brand, ideal for a stylish European
-              sportsbook or betting network.
-            </p>
-            <a class="btn-ghost" href="mailto:contact@domainelysee.com?subject=Offer%20for%20Diamanti.bet">
-              Make an offer
-            </a>
-          </article>
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 0;
+}
 
-          <!-- ADD MORE DOMAIN CARDS BELOW -->
-          <!--
-          <article class="domain-card">
-            <div class="domain-name">YourDomain.com</div>
-            <div class="domain-meta">
-              <span class="badge badge-gold">Category</span>
-              <span class="badge badge-silver">Tag</span>
-            </div>
-            <p class="domain-desc">
-              Short description of the domain, positioning and ideal use.
-            </p>
-            <a class="btn-ghost" href="mailto:contact@domainelysee.com?subject=Offer%20for%20YourDomain.com">
-              Make an offer
-            </a>
-          </article>
-          -->
-        </div>
-      </div>
-    </section>
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
 
-    <!-- ABOUT -->
-    <section id="about" class="section section-alt">
-      <div class="container about-inner">
-        <div>
-          <h2>About Domain Élysée</h2>
-          <p>
-            Domain Élysée is a boutique, monarchy-inspired portfolio of
-            premium domains owned by a single private investor. Each name is
-            hand-picked for rarity, brandability and long-term digital
-            value.
-          </p>
-          <p>
-            The collection focuses on AI, casino & betting, finance,
-            strategic .AE brands and high-status luxury concepts suitable for
-            tier-1 ventures.
-          </p>
-        </div>
-        <div class="about-highlight">
-          <div class="about-label">Philosophy</div>
-          <div class="about-text">
-            Domains are the modern royal estates of the internet.
-            Only a few sit on the main avenue.
-          </div>
-        </div>
-      </div>
-    </section>
+.crown {
+  font-size: 1.8rem;
+  color: var(--gold);
+  filter: drop-shadow(0 0 10px rgba(212,175,55,0.5));
+}
 
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-      <div class="container contact-inner">
-        <div class="section-heading">
-          <h2>Contact & Offers</h2>
-          <p>
-            For serious acquisition offers, bulk deals or JV proposals,
-            please reach out with your company details and target domains.
-          </p>
-        </div>
+.brand-name {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
 
-        <div class="contact-box">
-          <div class="contact-line">
-            📩 Email:
-            <a href="mailto:contact@domainelysee.com">contact@domainelysee.com</a>
-          </div>
-          <p class="contact-note">
-            Please include: domain name, your offer (USD), and any relevant background.
-          </p>
-        </div>
-      </div>
-    </section>
-  </main>
+.brand-tagline {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <span>© <span id="year"></span> Domain Élysée – All rights reserved.</span>
-      <span class="footer-sub">domainelysee.com</span>
-    </div>
-  </footer>
+.nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
 
-  <script>
-    // Set current year automatically
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+.nav a {
+  text-decoration: none;
+  color: var(--text-main);
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.5rem;
+  opacity: 0.9;
+}
+
+.nav a:hover {
+  opacity: 1;
+}
+
+.btn-nav {
+  border: 1px solid rgba(212,175,55,0.85);
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+}
+
+/* Hero */
+
+.hero {
+  padding: 4.5rem 0 3.5rem;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.4fr);
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.4rem, 3.2vw + 1rem, 3.4rem);
+  line-height: 1.15;
+  margin: 0 0 1rem;
+}
+
+.hero p {
+  margin: 0 0 1.6rem;
+  color: var(--text-muted);
+  max-width: 34rem;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(212,175,55,0.95);
+  background: radial-gradient(circle at top left, #f6e7b9 0, #d4af37 40%, #7f6724 100%);
+  color: #221;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.55);
+}
+
+.btn-primary:hover {
+  filter: brightness(1.06);
+}
+
+.hero-badge {
+  border-radius: 1.5rem;
+  padding: 1.6rem 1.4rem;
+  background: radial-gradient(circle at top, #28223a 0, #101019 55%);
+  border: 1px solid rgba(212,175,55,0.35);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.65);
+}
+
+.badge-title {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--silver);
+  margin-bottom: 0.35rem;
+}
+
+.badge-name {
+  font-family: "Playfair Display", serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.badge-sub {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+/* Sections */
+
+.section {
+  padding: 3.5rem 0;
+}
+
+.section-alt {
+  background: radial-gradient(circle at top, #181628 0, #050509 70%);
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 2.2rem;
+}
+
+.section-heading h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  margin: 0 0 0.6rem;
+}
+
+.section-heading p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+/* Portfolio */
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.6rem;
+}
+
+.domain-card {
+  background: linear-gradient(145deg, #151522, #0b0b12);
+  border-radius: 1.1rem;
+  border: 1px solid var(--border);
+  padding: 1.15rem 1.1rem 1.25rem;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.65);
+}
+
+.domain-card:hover {
+  border-color: rgba(212,175,55,0.5);
+  transform: translateY(-2px);
+  transition: all 0.2s ease-out;
+}
+
+.domain-name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.domain-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-bottom: 0.55rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.12rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.badge-gold {
+  border-color: rgba(212,175,55,0.8);
+  color: var(--gold);
+}
+
+.badge-silver {
+  border-color: rgba(192,196,216,0.8);
+  color: var(--silver);
+}
+
+.badge-royal {
+  border-color: rgba(124,107,255,0.9);
+  color:
