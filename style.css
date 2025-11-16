@@ -336,3 +336,38 @@ body {
   box-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
 }
 
+/* PREMIUM GOLD HOVER FOR NAV LINKS */
+.nav a {
+  position: relative;
+  color: var(--text-main);
+  transition: color 0.25s ease-out;
+}
+
+/* Animated gold underline */
+.nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    rgba(212,175,55,0),
+    rgba(212,175,55,1),
+    rgba(212,175,55,0)
+  );
+  transform: translateX(-50%);
+  transition: width 0.25s ease-out;
+  border-radius: 999px;
+}
+
+/* Hover effect */
+.nav a:hover {
+  color: var(--gold);
+  text-shadow: 0 0 8px rgba(212,175,55,0.45);
+}
+
+.nav a:hover::after {
+  width: 65%;
+}
