@@ -94,11 +94,31 @@
 
   <!-- CARD 1 -->
 <article class="domain-card">
-  <span class="sparkle s1"></span>
+  <span
+    style="
+      position:absolute;
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:radial-gradient(circle,
+        rgba(255,245,210,0.95),
+        rgba(212,175,55,0.85),
+        rgba(212,175,55,0) 70%);
+      top:10px;
+      left:10px;
+      opacity:0.95;
+      filter:drop-shadow(0 0 8px rgba(212,175,55,0.9));
+      animation:sparkleFloat 1.6s ease-out infinite;
+      pointer-events:none;
+      z-index:3;
+    "
+  ></span>
+
   <span class="sparkle s2"></span>
   <span class="sparkle s3"></span>
 
-    <div class="domain-name">Diamante.casino</div>
+  <div class="domain-name">Diamante.casino</div>
+
     <div class="domain-meta">
       <span class="badge badge-gold">Casino</span>
       <span class="badge badge-silver">Premium</span>
