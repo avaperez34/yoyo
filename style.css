@@ -371,3 +371,11 @@ body {
 .nav a:hover::after {
   width: 65%;
 }
+
+/* Bottom gold line (under menu) */
+.header-divider-bottom {
+  width: 60%;
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+  opacity: 0.9;
+}
