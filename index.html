@@ -15,16 +15,36 @@
 <header class="site-header">
   <div class="container header-inner">
 
-    <div class="logo-box">
-     <img src="logo.png" alt="Domain Elysee Logo"
-  class="logo" style="max-height:80px; width:auto; display:block; margin:0 auto;">
-  </div>   
+   <div class="logo-box">
+  <svg class="de-logo" width="200" height="100" viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#fff6c7"/>
+        <stop offset="35%" stop-color="#e3c15d"/>
+        <stop offset="65%" stop-color="#c69c34"/>
+        <stop offset="100%" stop-color="#8a6b22"/>
+      </linearGradient>
+      <filter id="gold-glow" x="-20%" y="-20%" width="150%" height="150%">
+        <feGaussianBlur stdDeviation="8" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
 
-    <nav class="nav">
-      <a href="#portfolio">Portfolio</a>
-      <a href="#about">About</a>
-      <a href="#contact" class="btn-nav">Contact</a>
-    </nav>
+    <text x="10" y="150"
+          font-family="Playfair Display, serif"
+          font-size="150"
+          font-weight="700"
+          letter-spacing="15"
+          fill="url(#gold)"
+          filter="url(#gold-glow)">
+      DE
+    </text>
+  </svg>
+</div>
+
 
   </div>
 </header>
