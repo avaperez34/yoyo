@@ -515,34 +515,3 @@ body {
   }
 }
 
-/* DEBUG OVERRIDE FOR SPARKLES – MUST BE VISIBLE */
-
-/* LUXURY GOLD SPARKLES – avec z-index fort */
-.sparkle {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(255, 245, 210, 0.95),
-    rgba(212, 175, 55, 0.85),
-    rgba(212, 175, 55, 0) 70%
-  );
-  opacity: 0;
-  pointer-events: none;
-  transform: scale(0.7);
-  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.9));
-  transition: opacity 0.3s ease-out;
-  z-index: 3;
-}
-
-/* s1 s2 s3 inchangés */
-.s1 { top: 15%; left: 15%; }
-.s2 { top: 35%; right: 15%; }
-.s3 { bottom: 20%; left: 40%; }
-
-.domain-card:hover .sparkle {
-  animation: sparkleFloat 1.6s ease-out infinite;
-  opacity: 1;
-}
