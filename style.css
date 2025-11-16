@@ -236,35 +236,27 @@ body {
     background 0.25s ease-out;
 }
 
-/* subtle inner gold aura on hover */
-/* DEBUG MODE — STRONG GOLD AURA */
+/* LUXURY GOLD AURA (REFINED VERSION) */
 .domain-card::before {
   content: "";
   position: absolute;
   inset: -1px;
   border-radius: inherit;
-  background: radial-gradient(circle at top center,
-    rgba(255,215,100,0.55),
-    rgba(212,175,55,0.3),
-    transparent 65%);
+  background: radial-gradient(
+    circle at top center,
+    rgba(212,175,55,0.42),    /* rich gold center */
+    rgba(212,175,55,0.18),    /* soft blend */
+    transparent 70%           /* smooth fade-out */
+  );
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.25s ease-out;
-}
-
-
-/* hover effect */
-.domain-card:hover {
-  transform: translateY(-4px) scale(1.01);
-  border-color: rgba(212,175,55,0.7);
-  box-shadow:
-    0 16px 40px rgba(0,0,0,0.85),
-    0 0 24px rgba(212,175,55,0.55);
-  background: radial-gradient(circle at top left, #26203a 0, #0b0b12 60%);
+  transition: opacity 0.28s ease-out, transform 0.3s ease-out;
+  transform: translateY(10px); /* subtle upward motion */
 }
 
 .domain-card:hover::before {
   opacity: 1;
+  transform: translateY(0);   /* aura rises a bit while fading in */
 }
 
 .domain-name {
