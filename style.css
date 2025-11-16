@@ -295,6 +295,11 @@ body {
   animation: deGlow 2.8s ease-in-out infinite;
 }
 
+.de-logo:hover {
+  animation: deGlowHover 1.1s ease-in-out infinite;
+  cursor: pointer;
+}
+
 
 
 .brand-title {
@@ -413,3 +418,26 @@ body {
   }
 }
 
+/* Extra intense flash on hover */
+@keyframes deGlowHover {
+  0% {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 20px rgba(255, 240, 180, 0.9))
+            drop-shadow(0 0 40px rgba(212,175,55,0.8));
+  }
+  40% {
+    transform: scale(1.12);
+    filter: drop-shadow(0 0 60px rgba(255, 255, 200, 1))
+            drop-shadow(0 0 90px rgba(212,175,55,1));
+  }
+  70% {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 35px rgba(255, 240, 180, 0.9))
+            drop-shadow(0 0 60px rgba(212,175,55,0.8));
+  }
+  100% {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 20px rgba(255, 240, 180, 0.8))
+            drop-shadow(0 0 40px rgba(212,175,55,0.7));
+  }
+}
