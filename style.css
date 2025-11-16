@@ -280,10 +280,11 @@ body {
 }
 
 .logo {
-  height: 95px;
+  height: 60px;  /* smaller height */
   width: auto;
   display: block;
-  filter: drop-shadow(0px 0px 12px rgba(212,175,55,0.45));
+  margin: 0 auto;
+  filter: drop-shadow(0px 0px 8px rgba(212,175,55,0.35));
 }
 
 .brand-title {
