@@ -441,7 +441,7 @@ body {
     filter: drop-shadow(0 0 4px rgba(212,175,55,0.4))
             drop-shadow(0 0 10px rgba(212,175,55,0.2));
   }
-}
+
 
 /* Extra intense flash on hover */
 @keyframes deGlowHover {
@@ -464,5 +464,49 @@ body {
     transform: scale(1.05);
     filter: drop-shadow(0 0 20px rgba(255, 240, 180, 0.8))
             drop-shadow(0 0 40px rgba(212,175,55,0.7));
+  }
+
+/* LUXURY GOLD SPARKLES */
+.sparkle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: radial-gradient(circle,
+    rgba(255,245,200,0.9),
+    rgba(212,175,55,0.8),
+    rgba(212,175,55,0) 70%
+  );
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.4);
+  filter: drop-shadow(0 0 6px rgba(212,175,55,0.9));
+  transition: opacity 0.4s ease-out;
+}
+
+/* Sparkle positions */
+.s1 { top: 18%; left: 22%; }
+.s2 { top: 35%; right: 18%; }
+.s3 { bottom: 22%; left: 35%; }
+
+/* Animation on hover */
+.domain-card:hover .sparkle {
+  animation: sparkleFloat 1.6s ease-out infinite;
+  opacity: 1;
+}
+
+/* Soft floating motion */
+@keyframes sparkleFloat {
+  0% {
+    transform: translateY(0) scale(0.4);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(-10px) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(0.4);
+    opacity: 0.15;
   }
 }
