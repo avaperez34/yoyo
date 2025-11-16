@@ -234,6 +234,7 @@ body {
     box-shadow 0.25s ease-out,
     border-color 0.25s ease-out,
     background 0.25s ease-out;
+  z-index: 0;
 }
 
 /* LUXURY GOLD AURA (REFINED VERSION) */
@@ -252,6 +253,7 @@ body {
   pointer-events: none;
   transition: opacity 0.28s ease-out, transform 0.3s ease-out;
   transform: translateY(10px); /* subtle upward motion */
+  z-index: 1;
 }
 
 .domain-card:hover::before {
@@ -510,25 +512,33 @@ body {
     opacity: 0.15;
   }
 /* DEBUG OVERRIDE FOR SPARKLES – MUST BE VISIBLE */
+
+/* LUXURY GOLD SPARKLES – avec z-index fort */
 .sparkle {
   position: absolute;
-  width: 24px;
-  height: 24px;
-  background: red !important;
-  opacity: 1 !important;
-  border-radius: 0;
-  box-shadow: none;
-  transform: none;
-  filter: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 245, 210, 0.95),
+    rgba(212, 175, 55, 0.85),
+    rgba(212, 175, 55, 0) 70%
+  );
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.7);
+  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.9));
+  transition: opacity 0.3s ease-out;
+  z-index: 3;
 }
 
-/* Position of the 3 sparkles in each card */
-.s1 { top: 10px; left: 10px; }
-.s2 { top: 10px; right: 10px; }
-.s3 { bottom: 10px; left: 50%; transform: translateX(-50%); }
+/* s1 s2 s3 inchangés */
+.s1 { top: 15%; left: 15%; }
+.s2 { top: 35%; right: 15%; }
+.s3 { bottom: 20%; left: 40%; }
 
-/* No animation – static red squares */
 .domain-card:hover .sparkle {
-  animation: none !important;
-}
+  animation: sparkleFloat 1.6s ease-out infinite;
+  opacity: 1;
 }
