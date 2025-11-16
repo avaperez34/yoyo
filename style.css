@@ -291,7 +291,10 @@ body {
   max-width: 240px;
   width: 100%;
   height: auto;
+  transform-origin: center center;
+  animation: deGlow 6s ease-in-out infinite;
 }
+
 
 
 .brand-title {
@@ -378,4 +381,20 @@ body {
   margin-top: 0.4rem;
   margin-bottom: 0.4rem;
   opacity: 0.9;
+}
+
+/* Animated gold glow for DE logo */
+@keyframes deGlow {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 6px rgba(212,175,55,0.35));
+  }
+  50% {
+    transform: scale(1.02);
+    filter: drop-shadow(0 0 14px rgba(212,175,55,0.75));
+  }
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 6px rgba(212,175,55,0.35));
+  }
 }
