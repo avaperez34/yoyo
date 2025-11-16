@@ -18,13 +18,15 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
   background: radial-gradient(circle at top, #181628 0, #050509 55%);
   color: var(--text-main);
   line-height: 1.6;
@@ -46,8 +48,12 @@ body {
   top: 0;
   z-index: 20;
   backdrop-filter: blur(18px);
-  background: linear-gradient(to bottom, rgba(5,5,9,0.90), rgba(5,5,9,0.75));
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  background: linear-gradient(
+    to bottom,
+    rgba(5, 5, 9, 0.9),
+    rgba(5, 5, 9, 0.75)
+  );
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .header-inner {
@@ -56,44 +62,21 @@ body {
   justify-content: center;
   align-items: center;
   padding: 0.6rem 0 0.3rem 0;
-
-
 }
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.crown {
-  font-size: 1.8rem;
-  color: var(--gold);
-  filter: drop-shadow(0 0 10px rgba(212,175,55,0.5));
-}
-
-.brand-name {
-  font-family: "Playfair Display", serif;
-  font-weight: 700;
-  font-size: 1.25rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.brand-tagline {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-}
+/* NAV */
 
 .nav {
   display: flex;
   gap: 1rem;
   align-items: center;
+  margin-top: 0.7rem;
+  justify-content: center;
+  width: 100%;
 }
 
 .nav a {
+  position: relative;
   text-decoration: none;
   color: var(--text-main);
   font-size: 0.9rem;
@@ -101,14 +84,42 @@ body {
   text-transform: uppercase;
   padding: 0.3rem 0.5rem;
   opacity: 0.9;
+  transition: color 0.25s ease-out;
 }
 
-.nav a:hover {
-  opacity: 1;
+/* Animated gold underline */
+.nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    rgba(212, 175, 55, 0),
+    rgba(212, 175, 55, 1),
+    rgba(212, 175, 55, 0)
+  );
+  transform: translateX(-50%);
+  transition: width 0.25s ease-out;
+  border-radius: 999px;
+}
+
+/* Hover + active effect */
+.nav a:hover,
+.nav a.active {
+  color: var(--gold);
+  text-shadow: 0 0 8px rgba(212, 175, 55, 0.45);
+}
+
+.nav a:hover::after,
+.nav a.active::after {
+  width: 65%;
 }
 
 .btn-nav {
-  border: 1px solid rgba(212,175,55,0.85);
+  border: 1px solid rgba(212, 175, 55, 0.85);
   border-radius: 999px;
   padding: 0.35rem 0.9rem;
 }
@@ -143,15 +154,20 @@ body {
   display: inline-block;
   padding: 0.8rem 1.6rem;
   border-radius: 999px;
-  border: 1px solid rgba(212,175,55,0.95);
-  background: radial-gradient(circle at top left, #f6e7b9 0, #d4af37 40%, #7f6724 100%);
+  border: 1px solid rgba(212, 175, 55, 0.95);
+  background: radial-gradient(
+    circle at top left,
+    #f6e7b9 0,
+    #d4af37 40%,
+    #7f6724 100%
+  );
   color: #221;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.95rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.55);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
 }
 
 .btn-primary:hover {
@@ -162,8 +178,8 @@ body {
   border-radius: 1.5rem;
   padding: 1.6rem 1.4rem;
   background: radial-gradient(circle at top, #28223a 0, #101019 55%);
-  border: 1px solid rgba(212,175,55,0.35);
-  box-shadow: 0 14px 40px rgba(0,0,0,0.65);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.65);
 }
 
 .badge-title {
@@ -220,24 +236,24 @@ body {
   gap: 1.6rem;
 }
 
-/* LUXURY DOMAIN CARD STYLE */
+/* LUXURY DOMAIN CARD + GOLD AURA */
 .domain-card {
   position: relative;
   background: radial-gradient(circle at top left, #1f1a2e 0, #0b0b12 55%);
   border-radius: 1.1rem;
   border: 1px solid var(--border);
   padding: 1.2rem 1.15rem 1.3rem;
-  box-shadow: 0 10px 28px rgba(0,0,0,0.65);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.65);
   overflow: hidden;
+  z-index: 0;
   transition:
     transform 0.25s ease-out,
     box-shadow 0.25s ease-out,
     border-color 0.25s ease-out,
     background 0.25s ease-out;
-  z-index: 0;
 }
 
-/* LUXURY GOLD AURA (REFINED VERSION) */
+/* Aura */
 .domain-card::before {
   content: "";
   position: absolute;
@@ -245,20 +261,29 @@ body {
   border-radius: inherit;
   background: radial-gradient(
     circle at top center,
-    rgba(212,175,55,0.42),    /* rich gold center */
-    rgba(212,175,55,0.18),    /* soft blend */
-    transparent 70%           /* smooth fade-out */
+    rgba(212, 175, 55, 0.42),
+    rgba(212, 175, 55, 0.18),
+    transparent 70%
   );
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.28s ease-out, transform 0.3s ease-out;
-  transform: translateY(10px); /* subtle upward motion */
+  transform: translateY(10px);
   z-index: 1;
+}
+
+.domain-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  border-color: rgba(212, 175, 55, 0.7);
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.85),
+    0 0 24px rgba(212, 175, 55, 0.55);
+  background: radial-gradient(circle at top left, #26203a 0, #0b0b12 60%);
 }
 
 .domain-card:hover::before {
   opacity: 1;
-  transform: translateY(0);   /* aura rises a bit while fading in */
+  transform: translateY(0);
 }
 
 .domain-name {
@@ -282,24 +307,23 @@ body {
   font-size: 0.7rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .badge-gold {
-  border-color: rgba(212,175,55,0.8);
+  border-color: rgba(212, 175, 55, 0.8);
   color: var(--gold);
 }
 
 .badge-silver {
-  border-color: rgba(192,196,216,0.8);
+  border-color: rgba(192, 196, 216, 0.8);
   color: var(--silver);
 }
 
 .badge-royal {
-  border-color: rgba(124,107,255,0.9);
+  border-color: rgba(124, 107, 255, 0.9);
   color: var(--royal);
 }
-
 
 /* LOGO HEADER REWORK – SVG DE Logo */
 .logo-box {
@@ -327,84 +351,21 @@ body {
   cursor: pointer;
 }
 
-
-
-.brand-title {
-  font-family: "Playfair Display", serif;
-  font-size: 1.4rem;
-  margin-top: 0.3rem;
-  letter-spacing: 0.08em;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--gold);
-}
-
-.brand-subtitle {
-  font-size: 0.82rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--silver);
-  opacity: 0.85;
-  margin-top: 0.1rem;
-}
-
-/* Center menu */
-.nav {
-  margin-top: 0.7rem;
-  justify-content: center;
-  width: 100%;
-}
-
 /* GOLD LINE UNDER LOGO */
 .header-divider {
-  width: 100%;
+  width: 80%;
   height: 2px;
-  margin: 0.7rem 0 0.6rem 0;
+  margin: 0.8rem auto 0.6rem auto;
   background: linear-gradient(
     to right,
     transparent,
-    rgba(212, 175, 55, 0.1),
-    rgba(212, 175, 55, 0.9),
-    rgba(212, 175, 55, 0.1),
+    rgba(212, 175, 55, 0.18),
+    rgba(212, 175, 55, 1),
+    rgba(212, 175, 55, 0.18),
     transparent
   );
-  box-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
-}
-
-/* PREMIUM GOLD HOVER FOR NAV LINKS */
-.nav a {
-  position: relative;
-  color: var(--text-main);
-  transition: color 0.25s ease-out;
-}
-
-/* Animated gold underline */
-.nav a::after {
-  content: "";
-  position: absolute;
-  bottom: -3px;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(
-    to right,
-    rgba(212,175,55,0),
-    rgba(212,175,55,1),
-    rgba(212,175,55,0)
-  );
-  transform: translateX(-50%);
-  transition: width 0.25s ease-out;
+  box-shadow: 0 0 14px rgba(212, 175, 55, 0.65);
   border-radius: 999px;
-}
-
-/* Hover effect */
-.nav a:hover {
-  color: var(--gold);
-  text-shadow: 0 0 8px rgba(212,175,55,0.45);
-}
-
-.nav a:hover::after {
-  width: 65%;
 }
 
 /* Bottom gold line (under menu) */
@@ -415,33 +376,32 @@ body {
   opacity: 0.9;
 }
 
-/* Animated gold glow for DE logo */
-/* DRAMATIC GOLD PULSE */
+/* DRAMATIC GOLD PULSE FOR DE LOGO */
 @keyframes deGlow {
   0% {
     transform: scale(1) rotate(0deg);
-    filter: drop-shadow(0 0 4px rgba(212,175,55,0.4))
-            drop-shadow(0 0 10px rgba(212,175,55,0.2));
+    filter: drop-shadow(0 0 4px rgba(212, 175, 55, 0.4))
+      drop-shadow(0 0 10px rgba(212, 175, 55, 0.2));
   }
   25% {
     transform: scale(1.08) rotate(1deg);
-    filter: drop-shadow(0 0 25px rgba(212,175,55,0.9))
-            drop-shadow(0 0 45px rgba(212,175,55,0.7));
+    filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.9))
+      drop-shadow(0 0 45px rgba(212, 175, 55, 0.7));
   }
   50% {
     transform: scale(1.12) rotate(0deg);
-    filter: drop-shadow(0 0 50px rgba(212,175,55,1))
-            drop-shadow(0 0 70px rgba(212,175,55,0.7));
+    filter: drop-shadow(0 0 50px rgba(212, 175, 55, 1))
+      drop-shadow(0 0 70px rgba(212, 175, 55, 0.7));
   }
   75% {
     transform: scale(1.08) rotate(-1deg);
-    filter: drop-shadow(0 0 30px rgba(212,175,55,0.9))
-            drop-shadow(0 0 50px rgba(212,175,55,0.6));
+    filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.9))
+      drop-shadow(0 0 50px rgba(212, 175, 55, 0.6));
   }
   100% {
     transform: scale(1) rotate(0deg);
-    filter: drop-shadow(0 0 4px rgba(212,175,55,0.4))
-            drop-shadow(0 0 10px rgba(212,175,55,0.2));
+    filter: drop-shadow(0 0 4px rgba(212, 175, 55, 0.4))
+      drop-shadow(0 0 10px rgba(212, 175, 55, 0.2));
   }
 }
 
@@ -450,72 +410,21 @@ body {
   0% {
     transform: scale(1.05);
     filter: drop-shadow(0 0 20px rgba(255, 240, 180, 0.9))
-            drop-shadow(0 0 40px rgba(212,175,55,0.8));
+      drop-shadow(0 0 40px rgba(212, 175, 55, 0.8));
   }
   40% {
     transform: scale(1.12);
     filter: drop-shadow(0 0 60px rgba(255, 255, 200, 1))
-            drop-shadow(0 0 90px rgba(212,175,55,1));
+      drop-shadow(0 0 90px rgba(212, 175, 55, 1));
   }
   70% {
     transform: scale(1.08);
     filter: drop-shadow(0 0 35px rgba(255, 240, 180, 0.9))
-            drop-shadow(0 0 60px rgba(212,175,55,0.8));
+      drop-shadow(0 0 60px rgba(212, 175, 55, 0.8));
   }
   100% {
     transform: scale(1.05);
     filter: drop-shadow(0 0 20px rgba(255, 240, 180, 0.8))
-            drop-shadow(0 0 40px rgba(212,175,55,0.7));
-  }
-}
-
-/* LUXURY GOLD SPARKLES – au-dessus de l'aura */
-.sparkle {
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(255, 245, 210, 0.95),
-    rgba(212, 175, 55, 0.85),
-    rgba(212, 175, 55, 0) 70%
-  );
-  opacity: 0;
-  pointer-events: none;
-  transform: scale(0.6);
-  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.9));
-  transition: opacity 0.3s ease-out;
-  z-index: 3;
-}
-
-/* positions dans la carte */
-.s1 { top: 15%; left: 15%; }
-.s2 { top: 35%; right: 15%; }
-.s3 { bottom: 20%; left: 40%; }
-
-/* apparition seulement au hover */
-.domain-card:hover .sparkle {
-  animation: sparkleFloat 1.6s ease-out infinite;
-  opacity: 1;
-}
-
-/* TRUE GOLD SPARKLE ANIMATION — FINAL FIX */
-@keyframes sparkleFloat {
-  0% {
-    transform: translateY(0) scale(0.6);
-    opacity: 0.9;
-  }
-  30% {
-    transform: translateY(-6px) scale(1.0);
-    opacity: 1;
-  }
-  60% {
-    transform: translateY(-2px) scale(0.8);
-    opacity: 0.6;
-  }
-  100% {
-    transform: translateY(0) scale(0.4);
-    opacity: 0.15;
+      drop-shadow(0 0 40px rgba(212, 175, 55, 0.7));
   }
 }
