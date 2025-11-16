@@ -468,39 +468,41 @@ body {
             drop-shadow(0 0 40px rgba(212,175,55,0.7));
   }
 
-/* LUXURY GOLD SPARKLES */
+/* LUXURY GOLD SPARKLES – au-dessus de l'aura */
 .sparkle {
   position: absolute;
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background: radial-gradient(circle,
-    rgba(255,245,200,0.9),
-    rgba(212,175,55,0.8),
-    rgba(212,175,55,0) 70%
+  background: radial-gradient(
+    circle,
+    rgba(255, 245, 210, 0.95),
+    rgba(212, 175, 55, 0.85),
+    rgba(212, 175, 55, 0) 70%
   );
   opacity: 0;
   pointer-events: none;
-  transform: scale(0.4);
-  filter: drop-shadow(0 0 6px rgba(212,175,55,0.9));
-  transition: opacity 0.4s ease-out;
+  transform: scale(0.6);
+  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.9));
+  transition: opacity 0.3s ease-out;
+  z-index: 3;
 }
 
-/* Sparkle positions */
-.s1 { top: 18%; left: 22%; }
-.s2 { top: 35%; right: 18%; }
-.s3 { bottom: 22%; left: 35%; }
+/* positions dans la carte */
+.s1 { top: 15%; left: 15%; }
+.s2 { top: 35%; right: 15%; }
+.s3 { bottom: 20%; left: 40%; }
 
-/* Animation on hover */
+/* apparition seulement au hover */
 .domain-card:hover .sparkle {
   animation: sparkleFloat 1.6s ease-out infinite;
   opacity: 1;
 }
 
-/* Soft floating motion */
+/* mouvement doux des étincelles */
 @keyframes sparkleFloat {
   0% {
-    transform: translateY(0) scale(0.4);
+    transform: translateY(0) scale(0.6);
     opacity: 0.9;
   }
   50% {
@@ -508,9 +510,11 @@ body {
     opacity: 1;
   }
   100% {
-    transform: translateY(0) scale(0.4);
+    transform: translateY(0) scale(0.5);
     opacity: 0.15;
   }
+}
+
 /* DEBUG OVERRIDE FOR SPARKLES – MUST BE VISIBLE */
 
 /* LUXURY GOLD SPARKLES – avec z-index fort */
