@@ -237,18 +237,21 @@ body {
 }
 
 /* subtle inner gold aura on hover */
+/* DEBUG MODE — STRONG GOLD AURA */
 .domain-card::before {
   content: "";
   position: absolute;
   inset: -1px;
   border-radius: inherit;
   background: radial-gradient(circle at top center,
-    rgba(212,175,55,0.18),
-    transparent 55%);
+    rgba(255,215,100,0.55),
+    rgba(212,175,55,0.3),
+    transparent 65%);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.25s ease-out;
 }
+
 
 /* hover effect */
 .domain-card:hover {
